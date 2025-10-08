@@ -127,8 +127,6 @@ Currency stored in transactions.currency
 
 Future Additions
 
-Add crypto-based payout layer (USDT/BTC) for users in restricted payment regions
-
 Introduce Riclivo Wallet (virtual escrow) for faster refund credits
 
 Integrate Apple Pay / Google Pay for in-app payment flow
