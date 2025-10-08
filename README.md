@@ -88,7 +88,7 @@ Each sheet is structured with specific columns for secure data mapping between G
 ---
 
 ## 📞 Contact
-**Riclivo by Modrane Ent. World**  
+**Riclivo by Ndukwu Chukwukadibia Denis**  
 📧 support@riclivo.com  
 🌐 [www.riclivo.com](https://www.riclivo.com) *(coming soon)*  
 
