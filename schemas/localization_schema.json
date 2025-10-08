@@ -1,0 +1,26 @@
+{
+  "default_language": "en",
+  "supported_languages": ["en", "fr", "es", "de", "pt"],
+  "currency_formats": {
+    "USD": "$#,##0.00",
+    "EUR": "€#,##0.00",
+    "NGN": "₦#,##0.00",
+    "GBP": "£#,##0.00"
+  },
+  "messages": {
+    "welcome": {
+      "en": "Welcome to Riclivo!",
+      "fr": "Bienvenue chez Riclivo!",
+      "es": "¡Bienvenido a Riclivo!"
+    },
+    "error_generic": {
+      "en": "Something went wrong. Please try again.",
+      "fr": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "reclaim_success": {
+      "en": "Your refund request has been submitted successfully.",
+      "es": "Su solicitud de reembolso se ha enviado correctamente."
+    }
+  },
+  "purpose": "Handles multilingual support and regional currency formatting for a global Riclivo user base."
+}
