@@ -1,132 +1,84 @@
 payment_integration.md
 
-Title: Payment Integration – Flutterwave / Paystack / Stripe
+File: /integrations/payment_integration.md
 
 
 ---
 
-Purpose
+1. Purpose
 
-Riclivo uses secure payment gateways to:
-
-Collect subscription fees (Freemium → Premium → Business)
-
-Process commission payments for successful refunds
-
-Support multi-currency receipts and global scalability
-
-
-Supported gateways are region-based:
-
-Region	Provider	Notes
-
-Africa	Flutterwave, Paystack	Local cards, bank transfer, and mobile money
-Europe / UK	Stripe, GoCardless	SEPA, Visa, Mastercard
-North America	Stripe	ACH and credit cards
-Asia	Razorpay (future)	INR and regional wallets
-
+To outline all supported and planned payment methods Riclivo integrates with — both for receiving user payments and processing refunds or reclaims.
 
 
 ---
 
-API Endpoints
+2. Supported Payment Layers
 
-Function	Endpoint	Method	Description
+Category	Provider	Purpose	Status
 
-Create payment link	/payments/create	POST	Generate payment link for subscription or refund commission
-Verify payment	/payments/verify/:id	GET	Confirm transaction status
-List transactions	/payments/history	GET	Retrieve all user payments
-Refund payment	/payments/refund/:id	POST	Process refund reversal where applicable
+Card & Wallet Payments	Stripe	Card processing (Visa, MasterCard), Apple Pay, Google Pay	✅ Active
+	Paystack	Local NGN / African payments	✅ Active
+	Flutterwave	Alternative Africa-wide option	🔄 Optional
+Bank Transfers (Wise)	Wise Business	Multi-currency account for global transfers and settlements	⚙️ Setup (Estonia preferred)
+Crypto Payments	Binance Pay / Bybit API	Accept USDT, BTC, ETH	⚙️ Under Review
+In-App Reclaim Engine	Riclivo AI Engine	Auto-detect wrong charges, initiate reclaim through linked bank API	🧠 In Development
+Bookkeeping Sync	QuickBooks / Xero API (read-only)	Optional user sync for balance reconciliation	🧩 Planned
 
 
 
 ---
 
-Payment Flow
+3. Payment Flow
 
-1. User selects a subscription plan (Freemium / Premium / Business) in the app.
-
-
-2. Riclivo generates a checkout session with the active payment provider.
-
-
-3. Upon successful payment:
-
-Provider sends a webhook → /webhook/payment_success
-
-Riclivo updates users and transactions sheets.
+User pays for Riclivo plan → Stripe/Paystack processes payment → Riclivo logs transaction
+↓
+Reclaim Engine monitors bank transactions via Open Banking API
+↓
+If wrongful deduction found → Auto-reclaim via bank API or generate refund task
+↓
+Refund approved → User wallet or bank account credited
+↓
+Riclivo collects 10–15% commission → Settled via Wise multi-currency account
 
 
+---
 
-4. For refund reclaims:
+4. Security & Compliance Notes
 
-The refund commission is auto-calculated (reclaim_amount_estimate × commission_pct)
+All payment data is tokenized (PCI-DSS Level 1 compliant processors only).
 
-Payment confirmation triggers the “release refund” workflow.
+No raw card data is ever stored by Riclivo.
 
+Bank connections use OAuth 2.0 + Open Banking PSD2 standards.
 
+Refund & payout functions require user re-authentication.
+
+Crypto transactions are processed with AML/KYC layers (via exchange API).
 
 
 
 ---
 
-Commission and Plans
+5. Future Integrations
 
-Plan	Duration	Commission	Billing Cycle
+Apple Pay + Google Pay full native integration
 
-Freemium	60 days	20%	Free
-Premium	6 months	10%	$60/year
-Business	1 year	5%	$100/year or $270/3 years
+Automated invoice generation per transaction
 
+Support for stablecoins (USDT, USDC) as primary cross-border option
 
-
----
-
-Security Standards
-
-All transactions go through SSL 256-bit encryption.
-
-PCI-DSS Level 1 compliance enforced (Stripe / Flutterwave).
-
-No card data is stored on Riclivo servers or Sheets.
-
-Webhooks are verified via HMAC signature (secret keys in .env).
-
-Fraud detection via gateway’s native risk API.
+Integration with Tax & Bookkeeping modules to record payments automatically
 
 
 
 ---
 
-Webhook Handling
+6. Notes for Developers
 
-Event	Source	Action
+Use PAYMENT_GATEWAY_KEY from .env file (never commit keys)
 
-payment_success	All	Update user tier and active subscription
-payment_failed	All	Notify user and retry (max 3)
-refund_processed	Stripe / Flutterwave	Update bookkeeping + transaction sheet
-subscription_expired	Riclivo internal	Notify user and downgrade to Freemium
+Test environments: sandbox.stripe.com, sandbox.paystack.com
 
+Crypto webhooks handled via /api/payments/crypto/listener
 
-
----
-
-Multi-Currency Support
-
-Handled dynamically via Localization Sheet:
-
-Detect user region → match currency (₦, $, €, £, etc)
-
-Payment API auto-converts or routes to correct provider
-
-Currency stored in transactions.currency
-
-
-
----
-
-Future Additions
-
-Introduce Riclivo Wallet (virtual escrow) for faster refund credits
-
-Integrate Apple Pay / Google Pay for in-app payment flow
+Refund verification logged to transactions sheet under refund_status
