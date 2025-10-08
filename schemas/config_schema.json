@@ -1,0 +1,24 @@
+{
+  "environment": {
+    "production": true,
+    "version": "1.0.0",
+    "region": "EU-EST",
+    "default_currency": "USD"
+  },
+  "api_keys": {
+    "glide_api": "YOUR_GLIDE_KEY_HERE",
+    "openai_api": "YOUR_OPENAI_KEY_HERE",
+    "plaid_api": "YOUR_PLAID_KEY_HERE"
+  },
+  "integrations": {
+    "banking": ["Plaid", "Mono", "Bybit", "Binance"],
+    "payments": ["Stripe", "Paystack", "Wise"],
+    "tax_automation": ["QuickFile", "Xero"]
+  },
+  "features": {
+    "crypto_option": true,
+    "ai_chat_support": true,
+    "reclaim_funds_module": true
+  },
+  "purpose": "Central configuration file defining environment settings, API keys, integrations, and toggleable app features."
+}
