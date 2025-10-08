@@ -1,0 +1,26 @@
+{
+  "sheet_name": "Riclivo_Main_DB",
+  "columns": {
+    "A": "Transaction_ID",
+    "B": "User_ID",
+    "C": "Transaction_Type",
+    "D": "Amount",
+    "E": "Currency",
+    "F": "Category",
+    "G": "Description",
+    "H": "Payment_Method",
+    "I": "Date",
+    "J": "Status",
+    "K": "Tax",
+    "L": "Net_Amount",
+    "M": "AI_Notes",
+    "N": "Created_At",
+    "O": "Updated_At"
+  },
+  "sync": {
+    "interval_minutes": 10,
+    "auto_backup": true,
+    "connected_to": "Google Sheets API v4"
+  },
+  "purpose": "Acts as the central data sheet for Riclivo, storing synchronized transaction and user data for analytics and Glide UI display."
+}
