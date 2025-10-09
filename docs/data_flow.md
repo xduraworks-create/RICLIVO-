@@ -1,4 +1,4 @@
-Riclivo Data Flow Documentation
+# Riclivo Data Flow Documentation
 
 Last updated: October 2025
 Document type: System Architecture – Data Flow Overview
