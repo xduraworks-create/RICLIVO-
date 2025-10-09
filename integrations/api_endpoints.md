@@ -1,9 +1,6 @@
-1️⃣ api_endpoints.md → defines Riclivo’s REST structure
-2️⃣ ui_flow.md → shows how users move through the app (screens, actions, logic)
 
-Let’s handle them step-by-step beginning with
 
-🧩 api_endpoints.md
+# 🧩 api_endpoints.md
 
 
 ---
