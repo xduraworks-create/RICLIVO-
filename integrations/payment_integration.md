@@ -1,4 +1,4 @@
-payment_integration.md
+# payment_integration.md
 
 File: /integrations/payment_integration.md
 
