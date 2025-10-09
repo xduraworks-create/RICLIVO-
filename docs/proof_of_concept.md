@@ -1,4 +1,4 @@
-💡 Riclivo Proof of Concept
+# 💡 Riclivo Proof of Concept
 
 Last Updated: October 2025
 Document Type: MVP Demonstration / Operational Validation
