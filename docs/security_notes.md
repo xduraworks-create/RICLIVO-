@@ -1,4 +1,4 @@
-🛡️ Riclivo Security Notes
+# 🛡️ Riclivo Security Notes
 
 Last updated: October 2025
 Document Type: System Security Overview
