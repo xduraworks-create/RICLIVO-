@@ -1,4 +1,4 @@
-🤖 ai_chat_design.md
+# 🤖 ai_chat_design.md
 
 This document describes how Riclivo’s AI Assistant interface works — from layout and chat logic to model allocation per tier and feature permissions.
 You’ll put this inside your GitHub folder:
