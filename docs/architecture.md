@@ -1,6 +1,7 @@
-architecture.md
 
-Riclivo — System Architecture
+#  Riclivo — System Architecture
+
+architecture.md
 
 Last updated: 2025-10-06
 Purpose: high-level technical architecture for Riclivo — how components connect, data flows, security responsibilities, and deployment notes. This is written for founders, developers, and technical reviewers.
