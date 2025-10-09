@@ -1,5 +1,5 @@
 
-📄 bank_integration.md
+# 📄 bank_integration.md
 
 🔹 Purpose
 
