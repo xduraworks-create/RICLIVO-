@@ -1,4 +1,4 @@
-open_banking_integration.md
+# open_banking_integration.md
 
 Title: Open Banking Integration – Nordigen (GoCardless) and Partner APIs
 
