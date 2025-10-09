@@ -1,9 +1,6 @@
-dashboard_layout.md 👇
 
 
----
-
-🏠 Riclivo Dashboard Layout
+# 🏠 Riclivo Dashboard Layout
 
 1️⃣ Overview
 
