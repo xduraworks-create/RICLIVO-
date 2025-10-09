@@ -1,8 +1,8 @@
+
+
+# AI Integration – Riclivo Smart Assistant & Automation Engine
+
 ai_integration.md
-
-Title: AI Integration – Riclivo Smart Assistant & Automation Engine
-
-
 ---
 
 Purpose
