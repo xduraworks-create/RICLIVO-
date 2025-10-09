@@ -1,4 +1,4 @@
-🛡️ Riclivo Compliance Summary
+#  🛡️ Riclivo Compliance Summary
 
 Last Updated: October 2025
 Document Type: Legal & Regulatory Compliance Overview
