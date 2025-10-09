@@ -1,4 +1,4 @@
-schemas/bookkeeping_schema.md
+# bookkeeping_schema.md
 
 Purpose
 
