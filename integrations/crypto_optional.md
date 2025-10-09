@@ -1,9 +1,6 @@
-Here’s your crypto_integration.md — tailored to how Riclivo can safely integrate with USDT/BTC wallets, Binance, and Bybit, while staying compliant and usable within your app’s “Reclaim” and “Bookkeeping” systems.
 
 
----
-
-📄 crypto_integration.md
+# 📄 crypto_integration.md
 
 🔹 Purpose
 
