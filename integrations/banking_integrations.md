@@ -1,5 +1,5 @@
 
-🏦 banking_integration.md
+# 🏦 banking_integration.md
 
 Title: Banking Integration – Open Banking (Nordigen / GoCardless)
 
